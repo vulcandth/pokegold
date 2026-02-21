@@ -217,12 +217,12 @@ wCurSpriteOAMAddr:: db
 wCurIcon:: db
 
 wCurIconTile:: db
-UNION
-wSpriteAnimID::
-wCurSpriteOAMFlags:: db
-NEXTU
-wSpriteAnimAddrBackup:: dw
-ENDU
+	UNION
+	wSpriteAnimID::
+	wCurSpriteOAMFlags:: db
+	NEXTU
+	wSpriteAnimAddrBackup:: dw
+	ENDU
 wCurAnimVTile:: db
 wCurAnimXCoord:: db
 wCurAnimYCoord:: db
@@ -686,52 +686,52 @@ wBattleAnimVar:: db
 wBattleAnimByte:: db
 wBattleAnimOAMPointerLo:: db
 
-UNION
-wBattleObjectTempID:: db
-wBattleObjectTempXCoord:: db
-wBattleObjectTempYCoord:: db
-wBattleObjectTempParam:: db
+	UNION
+	wBattleObjectTempID:: db
+	wBattleObjectTempXCoord:: db
+	wBattleObjectTempYCoord:: db
+	wBattleObjectTempParam:: db
 
-NEXTU
-wBattleBGEffectTempID:: db
-wBattleBGEffectTempJumptableIndex:: db
-wBattleBGEffectTempTurn:: db
-wBattleBGEffectTempParam:: db
+	NEXTU
+	wBattleBGEffectTempID:: db
+	wBattleBGEffectTempJumptableIndex:: db
+	wBattleBGEffectTempTurn:: db
+	wBattleBGEffectTempParam:: db
 
-NEXTU
-wBattleAnimTempOAMFlags:: db
-wBattleAnimTempFixY:: db
-wBattleAnimTempTileID:: db
-wBattleAnimTempXCoord:: db
-wBattleAnimTempYCoord:: db
-wBattleAnimTempXOffset:: db
-wBattleAnimTempYOffset:: db
-wBattleAnimTempFrameOAMFlags:: db
-wBattleAnimTempPalette:: db
+	NEXTU
+	wBattleAnimTempOAMFlags:: db
+	wBattleAnimTempFixY:: db
+	wBattleAnimTempTileID:: db
+	wBattleAnimTempXCoord:: db
+	wBattleAnimTempYCoord:: db
+	wBattleAnimTempXOffset:: db
+	wBattleAnimTempYOffset:: db
+	wBattleAnimTempFrameOAMFlags:: db
+	wBattleAnimTempPalette:: db
 
-NEXTU
-wBattleAnimGFXTempTileID::
-wBattleAnimGFXTempPicHeight:: db
+	NEXTU
+	wBattleAnimGFXTempTileID::
+	wBattleAnimGFXTempPicHeight:: db
 
-NEXTU
-wBattleSineWaveTempProgress:: db
-wBattleSineWaveTempOffset:: db
-wBattleSineWaveTempAmplitude:: db
-wBattleSineWaveTempTimer:: db
+	NEXTU
+	wBattleSineWaveTempProgress:: db
+	wBattleSineWaveTempOffset:: db
+	wBattleSineWaveTempAmplitude:: db
+	wBattleSineWaveTempTimer:: db
 
-NEXTU
-wBattlePicResizeTempBaseTileID:: db
-wBattlePicResizeTempPointer:: dw
-ENDU
+	NEXTU
+	wBattlePicResizeTempBaseTileID:: db
+	wBattlePicResizeTempPointer:: dw
+	ENDU
 
-UNION
-	ds 50
-wBattleAnimEnd::
+	UNION
+		ds 50
+	wBattleAnimEnd::
 
-NEXTU
-wSurfWaveBGEffect:: ds $40
-wSurfWaveBGEffectEnd::
-ENDU
+	NEXTU
+	wSurfWaveBGEffect:: ds $40
+	wSurfWaveBGEffectEnd::
+	ENDU
 
 	ds 134
 
@@ -742,21 +742,21 @@ wPlayerMoveStruct:: move_struct wPlayerMoveStruct
 wEnemyMonNickname::  ds MON_NAME_LENGTH
 wBattleMonNickname:: ds MON_NAME_LENGTH
 
-UNION
-; battle mon
-wBattleMon:: battle_struct wBattleMon
+	UNION
+	; battle mon
+	wBattleMon:: battle_struct wBattleMon
 
-NEXTU
-; intro water/grass/fire cutscene data
-	ds 4
-wIntroJumptableIndex:: db
-wIntroBGMapPointer:: dw
-wIntroTilemapPointer:: dw
-wIntroTilesPointer:: dw
-wIntroFrameCounter1:: db
-wIntroFrameCounter2:: db
-wIntroSpriteStateFlag:: db
-ENDU
+	NEXTU
+	; intro water/grass/fire cutscene data
+		ds 4
+	wIntroJumptableIndex:: db
+	wIntroBGMapPointer:: dw
+	wIntroTilemapPointer:: dw
+	wIntroTilesPointer:: dw
+	wIntroFrameCounter1:: db
+	wIntroFrameCounter2:: db
+	wIntroSpriteStateFlag:: db
+	ENDU
 
 	ds 2
 
@@ -1419,14 +1419,14 @@ wMartItem10BCD:: ds 3
 NEXTU
 ; town map data
 wTownMapPlayerIconLandmark:: db
-UNION
-wTownMapCursorLandmark:: db
-wTownMapCursorObjectPointer:: dw
-NEXTU
-wTownMapCursorCoordinates:: dw
-wStartFlypoint:: db
-wEndFlypoint:: db
-ENDU
+	UNION
+	wTownMapCursorLandmark:: db
+	wTownMapCursorObjectPointer:: dw
+	NEXTU
+	wTownMapCursorCoordinates:: dw
+	wStartFlypoint:: db
+	wEndFlypoint:: db
+	ENDU
 
 NEXTU
 ; phone call data
@@ -1490,13 +1490,13 @@ NEXTU
 ; switching pokemon in party
 ; may store a name, partymon, or mail
 wSwitchMonBuffer::
-UNION
-	ds NAME_LENGTH
-NEXTU
-	ds PARTYMON_STRUCT_LENGTH
-NEXTU
-	ds MAIL_STRUCT_LENGTH
-ENDU
+	UNION
+		ds NAME_LENGTH
+	NEXTU
+		ds PARTYMON_STRUCT_LENGTH
+	NEXTU
+		ds MAIL_STRUCT_LENGTH
+	ENDU
 
 NEXTU
 ; giving pokemon mail
@@ -1504,13 +1504,13 @@ wMonMailMessageBuffer:: ds MAIL_MSG_LENGTH + 1
 
 NEXTU
 ; bill's pc
-UNION
-wBoxNameBuffer:: ds BOX_NAME_LENGTH
-NEXTU
-	ds 1
-wBillsPCTempListIndex:: db
-wBillsPCTempBoxCount:: db
-ENDU
+	UNION
+	wBoxNameBuffer:: ds BOX_NAME_LENGTH
+	NEXTU
+		ds 1
+	wBillsPCTempListIndex:: db
+	wBillsPCTempBoxCount:: db
+	ENDU
 
 NEXTU
 ; prof. oak's pc
@@ -1519,12 +1519,12 @@ wTempPokedexCaughtCount:: db
 
 NEXTU
 ; player's room pc
-UNION
-wDecoNameBuffer:: ds ITEM_NAME_LENGTH
-NEXTU
-wNumOwnedDecoCategories:: db
-wOwnedDecoCategories:: ds 16
-ENDU
+	UNION
+	wDecoNameBuffer:: ds ITEM_NAME_LENGTH
+	NEXTU
+	wNumOwnedDecoCategories:: db
+	wOwnedDecoCategories:: ds 16
+	ENDU
 
 NEXTU
 ; trade
@@ -1575,125 +1575,125 @@ NEXTU
 ; except the initial "mon buffer" UNION.
 	ds 60
 
-UNION
-; trainer data
-wSeenTrainerBank:: db
-wSeenTrainerDistance:: db
-wSeenTrainerDirection:: db
-wTempTrainer::
-wTempTrainerEventFlag:: dw
-wTempTrainerClass:: db
-wTempTrainerID:: db
-wSeenTextPointer:: dw
-wWinTextPointer:: dw
-wLossTextPointer:: dw
-wScriptAfterPointer:: dw
-wRunningTrainerBattleScript:: db
-wTempTrainerEnd::
+	UNION
+	; trainer data
+	wSeenTrainerBank:: db
+	wSeenTrainerDistance:: db
+	wSeenTrainerDirection:: db
+	wTempTrainer::
+	wTempTrainerEventFlag:: dw
+	wTempTrainerClass:: db
+	wTempTrainerID:: db
+	wSeenTextPointer:: dw
+	wWinTextPointer:: dw
+	wLossTextPointer:: dw
+	wScriptAfterPointer:: dw
+	wRunningTrainerBattleScript:: db
+	wTempTrainerEnd::
 
-NEXTU
-; menu items list
-wMenuItemsList:: ds 16
-wMenuItemsListEnd::
+	NEXTU
+	; menu items list
+	wMenuItemsList:: ds 16
+	wMenuItemsListEnd::
 
-NEXTU
-; fruit tree data
-wCurFruitTree:: db
-wCurFruit:: db
+	NEXTU
+	; fruit tree data
+	wCurFruitTree:: db
+	wCurFruit:: db
 
-NEXTU
-; item ball data
-wItemBallData::
-wItemBallItemID:: db
-wItemBallQuantity:: db
-wItemBallDataEnd::
+	NEXTU
+	; item ball data
+	wItemBallData::
+	wItemBallItemID:: db
+	wItemBallQuantity:: db
+	wItemBallDataEnd::
 
-NEXTU
-; hidden item data
-wHiddenItemData::
-wHiddenItemEvent:: dw
-wHiddenItemID:: db
-wHiddenItemDataEnd::
+	NEXTU
+	; hidden item data
+	wHiddenItemData::
+	wHiddenItemEvent:: dw
+	wHiddenItemID:: db
+	wHiddenItemDataEnd::
 
-NEXTU
-; elevator data
-wElevatorData::
-wElevatorPointerBank:: db
-wElevatorPointer:: dw
-wElevatorOriginFloor:: db
-wElevatorDataEnd::
+	NEXTU
+	; elevator data
+	wElevatorData::
+	wElevatorPointerBank:: db
+	wElevatorPointer:: dw
+	wElevatorOriginFloor:: db
+	wElevatorDataEnd::
 
-NEXTU
-; coord event data
-wCurCoordEvent::
-wCurCoordEventSceneID:: db
-wCurCoordEventMapY:: db
-wCurCoordEventMapX:: db
-	ds 1
-wCurCoordEventScriptAddr:: dw
+	NEXTU
+	; coord event data
+	wCurCoordEvent::
+	wCurCoordEventSceneID:: db
+	wCurCoordEventMapY:: db
+	wCurCoordEventMapX:: db
+		ds 1
+	wCurCoordEventScriptAddr:: dw
 
-NEXTU
-; BG event data
-wCurBGEvent::
-wCurBGEventYCoord:: db
-wCurBGEventXCoord:: db
-wCurBGEventType:: db
-wCurBGEventScriptAddr:: dw
+	NEXTU
+	; BG event data
+	wCurBGEvent::
+	wCurBGEventYCoord:: db
+	wCurBGEventXCoord:: db
+	wCurBGEventType:: db
+	wCurBGEventScriptAddr:: dw
 
-NEXTU
-; mart data
-wMartType:: db
-wMartPointerBank:: db
-wMartPointer:: dw
-wMartJumptableIndex:: db
-wBargainShopFlags:: dw
+	NEXTU
+	; mart data
+	wMartType:: db
+	wMartPointerBank:: db
+	wMartPointer:: dw
+	wMartJumptableIndex:: db
+	wBargainShopFlags:: dw
 
-NEXTU
-; player movement data
-wCurInput::
-wFacingTileID:: db
-wWalkingIntoNPC:: db
-wWalkingIntoLand:: db
-wWalkingIntoEdgeWarp:: db
-wMovementAnimation:: db
-wWalkingDirection:: db
-wFacingDirection:: db
-wWalkingX:: db
-wWalkingY:: db
-wWalkingTileCollision:: db
-	ds 6
-wPlayerTurningDirection:: db
+	NEXTU
+	; player movement data
+	wCurInput::
+	wFacingTileID:: db
+	wWalkingIntoNPC:: db
+	wWalkingIntoLand:: db
+	wWalkingIntoEdgeWarp:: db
+	wMovementAnimation:: db
+	wWalkingDirection:: db
+	wFacingDirection:: db
+	wWalkingX:: db
+	wWalkingY:: db
+	wWalkingTileCollision:: db
+		ds 6
+	wPlayerTurningDirection:: db
 
-NEXTU
-; std script buffer
-	ds 1
-wJumpStdScriptBuffer:: ds 3
+	NEXTU
+	; std script buffer
+		ds 1
+	wJumpStdScriptBuffer:: ds 3
 
-NEXTU
-; phone script data
-wCheckedTime:: db
-wPhoneListIndex:: db
-wNumAvailableCallers:: db
-wAvailableCallers:: ds CONTACT_LIST_SIZE
+	NEXTU
+	; phone script data
+	wCheckedTime:: db
+	wPhoneListIndex:: db
+	wNumAvailableCallers:: db
+	wAvailableCallers:: ds CONTACT_LIST_SIZE
 
-NEXTU
-; phone caller contact
-	ds 1
-wCallerContact:: ds PHONE_CONTACT_SIZE
+	NEXTU
+	; phone caller contact
+		ds 1
+	wCallerContact:: ds PHONE_CONTACT_SIZE
 
-NEXTU
-; backup menu data
-	ds 7
-wMenuCursorPositionBackup:: db
-wMenuScrollPositionBackup:: db
+	NEXTU
+	; backup menu data
+		ds 7
+	wMenuCursorPositionBackup:: db
+	wMenuScrollPositionBackup:: db
 
-NEXTU
-; poison step data
-wPoisonStepData::
-wPoisonStepFlagSum:: db
-wPoisonStepPartyFlags:: ds PARTY_LENGTH
-wPoisonStepDataEnd::
-ENDU
+	NEXTU
+	; poison step data
+	wPoisonStepData::
+	wPoisonStepFlagSum:: db
+	wPoisonStepPartyFlags:: ds PARTY_LENGTH
+	wPoisonStepDataEnd::
+	ENDU
 
 	ds 1
 
